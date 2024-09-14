@@ -34,50 +34,45 @@ namespace Kazino.Pages
 
         private void Button_Registration(object sender, RoutedEventArgs e)
         {
-            var iduser = txtLogin.Text;
 
-            var pass = Convert.ToInt32(txtPass.Text);
+            string login = txtLogin.Text.Trim();
+            int password = Convert.ToInt32(txtPass.Text); // Приводим к целочисленному типу
 
-            var usersss = connect.db.user.FirstOrDefault(id => id.login_user == iduser && id.password == pass);
+            // Проверяем, есть ли уже пользователь с таким логином в базе данных
+            var existingUser = connect.db.user.FirstOrDefault(u => u.login_user == login);
 
-            var UsEr = new user()
+            if (existingUser != null)
             {
-                login_user = iduser,
-                password = pass
-            };
-
-            var iduser1 = "";
-
-            var pass1 = 0;
-
-            var ussser = connect.db.user.FirstOrDefault(id1 => id1.login_user == iduser1 && id1.password == pass1);
-
-            var UsEr1 = new user()
+                // Если такой пользователь есть
+                if (existingUser.password == password)
+                {
+                    // Пароль верный - переходим в профиль
+                    _mainWindow.MainFrame.NavigationService.Navigate(new ProfilePage(_mainWindow));
+                }
+                else
+                {
+                    // Пароль неверный - выводим сообщение об ошибке
+                    MessageBox.Show("Неверный пароль!");
+                }
+            }
+            else
             {
-                login_user = iduser1,
-                password = pass1,
-                
-
-            };
-            if (txtLogin.Text != iduser & Convert.ToInt32(txtPass.Text) != pass)/*(iduser != iduser1 & pass != pass1)*/
-            {
-                string login = txtLogin.Text;
-                int password = Convert.ToInt32(txtPass.Text);
-                var userTemp = new user() { login_user = login, password = password };
-                connect.db.user.Add(userTemp);
+                // Пользователь не найден - регистрируем его
+                var newUser = new user()
+                {
+                    login_user = login,
+                    password = password
+                };
+                connect.db.user.Add(newUser);
                 connect.db.SaveChanges();
                 MessageBox.Show("Пользователь зарегистрирован");
                 _mainWindow.MainFrame.NavigationService.Navigate(new MainPage(_mainWindow));
             }
-            else if (txtLogin.Text == iduser & Convert.ToInt32(txtPass.Text) != pass)
-            {
-                MessageBox.Show("Пароль введен не правильно!");
-            }
-            else if (txtLogin.Text == iduser & Convert.ToInt32(txtPass.Text) == pass)
-            {
-                _mainWindow.MainFrame.NavigationService.Navigate(new ProfilePage(_mainWindow));
-            }
-
         }
     }
+
+
+
+  
 }
+
