@@ -1,0 +1,21 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kazino"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="Kazino.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="1230" Height="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Frame x:Name="MainFrame"/>
+        <Button Content="✕" Margin="1118,24,0,0" VerticalAlignment="Top" Width="50" Height="50" RenderTransformOrigin="1.58,0.34" Click="Button_Click_Exit"/>
+        <ui:Button Content="Profile" Margin="510,704,0,0" VerticalAlignment="Top" Width="204" Height="66" FontSize="36" Click="Button_Profile"/>
+        <ui:Button Content="Kosti" Margin="770,704,0,0" VerticalAlignment="Top" Width="204" Height="66" FontSize="36" Click="Button_Kosti"/>
+        <ui:Button Content="Ruletka" Margin="250,704,0,0" VerticalAlignment="Top" Width="204" Height="66" FontSize="36" Click="Button_Ruletka"/>
+    </Grid>
+</Window>
