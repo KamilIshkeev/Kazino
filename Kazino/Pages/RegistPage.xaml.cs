@@ -81,25 +81,24 @@ namespace Kazino.Pages
             // Проверяем, есть ли уже пользователь с таким логином в базе данных
             var existingUser = connect.db.user.FirstOrDefault(u => u.login_user == login);
 
-            if (status == true)
-            {
-                existingUser.id_status = true;
-                connect.db.SaveChanges();
-
-            }
-            else
-            {
-                // Пользователь не найден - регистрируем его
-                //var newUser = new user()
-                //{
-                //    login_user = login,
-                //    password = password
-                //};
-                //connect.db.user.Add(newUser);
-                //connect.db.SaveChanges();
-                //MessageBox.Show("Пользователь зарегистрирован");
-                //_mainWindow.MainFrame.NavigationService.Navigate(new MainPage(_mainWindow));
-            }
+            //if (status == true)
+            //{
+            //    existingUser.id_status = true;
+            //    connect.db.SaveChanges();
+            //}
+            //else
+            //{
+            //    // Пользователь не найден - регистрируем его
+            //    //var newUser = new user()
+            //    //{
+            //    //    login_user = login,
+            //    //    password = password
+            //    //};
+            //    //connect.db.user.Add(newUser);
+            //    //connect.db.SaveChanges();
+            //    //MessageBox.Show("Пользователь зарегистрирован");
+            //    //_mainWindow.MainFrame.NavigationService.Navigate(new MainPage(_mainWindow));
+            //}
         }
     }
 

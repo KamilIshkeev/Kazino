@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kazino.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,30 +13,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Kazino.Pages;
 
 namespace Kazino.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для HistoryGame.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class HistoryGame : Page
     {
         static MainWindow _mainWindow;
-        public MainPage(MainWindow mainWindow)
+        public HistoryGame(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
-        }
-
-        private void Button_Profile(object sender, RoutedEventArgs e)
-        {
-            _mainWindow.MainFrame.NavigationService.Navigate(new ProfilePage(_mainWindow));
-        }
-
-        private void MainPageX_Navigated(object sender, NavigationEventArgs e)
-        {
-
+            ListHistory.ItemsSource = connect.db.ind_history.ToList();
         }
     }
 }

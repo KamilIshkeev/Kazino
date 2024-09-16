@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace Kazino.Pages
         private Random random;
         private DispatcherTimer timer;
         private int spinCount;
+        private int stavka;
 
 
         static MainWindow _mainWindow;
@@ -47,21 +49,53 @@ namespace Kazino.Pages
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            if (Sum_Stavki.Text == "Укажите сумму ставки")
+            {
+                Sum_Stavki.Text = "1000";
+            }
+
+            if (Kf_stav.Text == "Укажите К/Ф")
+            {
+                Kf_stav.Text = "5";
+            }
+            var kf = Convert.ToInt32(Kf_stav.Text);
+            
+            stavka = Convert.ToInt32(Sum_Stavki.Text);
             // Генерируем случайное число от 0 до 36
-            int result = random.Next(0, 21);
+            int result = random.Next(0, kf);
             ResultTextBlock.Text = result.ToString();
             spinCount++;
-            int result1 = random.Next(0, 21);
+            int result1 = random.Next(0, kf);
             ResultTextBlock1.Text = result1.ToString();
             spinCount++;
-            int result2 = random.Next(0, 21);
+            int result2 = random.Next(0, kf);
             ResultTextBlock2.Text = result2.ToString();
             spinCount++;
 
             // Останавливаем вращение через 20 раз (например)
-            if (spinCount >= 10 )
+            if (spinCount >= 10)
             {
                 timer.Stop(); // Останавливаем таймер
+                if (result == result1 && result1 == result2 && kf < 3)
+                {
+                    itog_Stavki.Text = $"Итог: Вы выиграли {stavka * 5}";
+                }
+                else if (result == result1 && result1 == result2 && kf < 5)
+                {
+                    itog_Stavki.Text = $"Итог: Вы выиграли {stavka * 15}";
+                }
+                else if (result == result1 && result1 == result2 && kf < 10)
+                {
+                    itog_Stavki.Text = $"Итог: Вы выиграли {stavka * 25}";
+                }
+                else if (result == result1 && result1 == result2 && kf < 15)
+                {
+                    itog_Stavki.Text = $"Итог: Вы выиграли {stavka * 30}";
+                }
+                else
+                {
+                    itog_Stavki.Text = $"Итог: Вы проиграли {stavka}";
+                }
             }
         }
     }

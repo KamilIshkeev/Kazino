@@ -10,7 +10,7 @@
       Title="MainPage">
 
     <Grid>
-        <Frame x:Name="MainPageX"/>
-        <ui:Button Content="Профиль" Margin="965,63,0,0" VerticalAlignment="Top" Width="167" Height="76" FontSize="36" Click="Button_Profile"/>
+        <Frame x:Name="MainPageX" Navigated="MainPageX_Navigated"/>
+        <ui:Button Content="Профиль" Margin="1050,30,0,0" VerticalAlignment="Top" Width="140" Height="36" FontSize="36" Click="Button_Profile"/>
     </Grid>
 </Page>

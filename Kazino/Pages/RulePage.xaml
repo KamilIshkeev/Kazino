@@ -9,8 +9,37 @@
 
     <Grid>
         <TextBlock x:Name="ResultTextBlock" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center" Width="74" Margin="596,0,0,0"/>
-        <Button x:Name="SpinButton" Content="Spin" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50" Click="SpinButton_Click"/>
+        <Button x:Name="SpinButton" Content="Spin" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,504,0,0" Click="SpinButton_Click">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
+                    <LinearGradientBrush.RelativeTransform>
+                        <ScaleTransform CenterY="0.5" ScaleY="-1"/>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#29000000" Offset="0"/>
+                    <GradientStop Color="Red" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
         <TextBlock x:Name="ResultTextBlock1" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center" Width="74" Margin="488,0,0,0"/>
         <TextBlock x:Name="ResultTextBlock2" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center" Width="74" Margin="698,0,0,0"/>
+        <Label Content="Ставка:" HorizontalAlignment="Left" Height="24" Margin="233,317,0,0" VerticalAlignment="Top" Width="52" FontSize="36" Foreground="Red"/>
+        <TextBox x:Name="Sum_Stavki" HorizontalAlignment="Left" Height="36" Margin="290,310,0,0" TextWrapping="Wrap" Text="Укажите сумму ставки" VerticalAlignment="Top" Width="176">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,2">
+                    <GradientStop Color="#0F000000"/>
+                    <GradientStop Color="Red" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBlock x:Name="itog_Stavki" HorizontalAlignment="Left" Margin="525,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="204"><Run Language="ru-ru" Text="Итог"/><Run Text=":"/></TextBlock>
+        <Label Content="Коэффицеиент:" HorizontalAlignment="Left" Height="24" Margin="211,370,0,0" VerticalAlignment="Top" Width="99" FontSize="36" Foreground="Red"/>
+        <TextBox x:Name="Kf_stav" HorizontalAlignment="Left" Height="36" Margin="323,364,0,0" TextWrapping="Wrap" Text="Укажите К/Ф" VerticalAlignment="Top" Width="110">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,2">
+                    <GradientStop Color="#0F000000"/>
+                    <GradientStop Color="Red" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
     </Grid>
 </Page>

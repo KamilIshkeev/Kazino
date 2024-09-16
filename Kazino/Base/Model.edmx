@@ -80,7 +80,7 @@
           <Property Name="credits" Type="int" />
           <Property Name="data_regist" Type="date" />
           <Property Name="chips" Type="int" />
-          <Property Name="id_status" Type="bit" />
+          <Property Name="id_status" Type="int" />
         </EntityType>
         <Association Name="FK_ind_history_game">
           <End Role="game" Type="Self.game" Multiplicity="0..1" />
@@ -216,7 +216,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Kazino1337Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="Kazino1337Entities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Kazino1337Entities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="bank_kazino" EntityType="Kazino1337Model.bank_kazino" />
           <EntitySet Name="game" EntityType="Kazino1337Model.game" />
           <EntitySet Name="ind_history" EntityType="Kazino1337Model.ind_history" />
@@ -341,7 +341,7 @@
           <Property Name="credits" Type="Int32" />
           <Property Name="data_regist" Type="DateTime" Precision="0" />
           <Property Name="chips" Type="Int32" />
-          <Property Name="id_status" Type="Boolean" />
+          <Property Name="id_status" Type="Int32" />
           <NavigationProperty Name="ind_history" Relationship="Kazino1337Model.FK_ind_history_user" FromRole="user" ToRole="ind_history" />
           <NavigationProperty Name="trade_chips" Relationship="Kazino1337Model.FK_trade_chips_user" FromRole="user" ToRole="trade_chips" />
         </EntityType>
@@ -437,12 +437,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Kazino1337ModelContainer" CdmEntityContainer="Kazino1337Entities1">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Kazino1337ModelContainer" CdmEntityContainer="Kazino1337Entities2">
           <EntitySetMapping Name="bank_kazino">
             <EntityTypeMapping TypeName="Kazino1337Model.bank_kazino">
               <MappingFragment StoreEntitySet="bank_kazino">

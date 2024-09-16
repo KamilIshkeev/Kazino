@@ -10,7 +10,7 @@
 
     <Grid>
 
-        <ui:TextBlock HorizontalAlignment="Left" Margin="518,36,0,0" TextWrapping="Wrap" Text="Профиль" VerticalAlignment="Top" FontSize="36"/>
-        <Image x:Name="QrCodeImage" Width="100" Height="100" Margin="1300,526,520,454"/>
+        <ui:TextBlock HorizontalAlignment="Left" Margin="522,0,0,0" TextWrapping="Wrap" Text="Профиль" VerticalAlignment="Top" FontSize="36"/>
+        <Image x:Name="QrCodeImage" Width="100" Height="100" Margin="1080,64,50,636"/>
     </Grid>
 </Page>

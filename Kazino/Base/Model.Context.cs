@@ -13,10 +13,10 @@ namespace Kazino.Base
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Kazino1337Entities1 : DbContext
+    public partial class Kazino1337Entities2 : DbContext
     {
-        public Kazino1337Entities1()
-            : base("name=Kazino1337Entities1")
+        public Kazino1337Entities2()
+            : base("name=Kazino1337Entities2")
         {
         }
     

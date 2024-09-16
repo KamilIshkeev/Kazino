@@ -7,9 +7,5 @@
       mc:Ignorable="d"  Background="white"
       Title="GamePage" Width="1230" Height="800">
 
-    <Grid>
-        <Button Content="Kosti" Margin="156,693,0,0" VerticalAlignment="Top" Height="62" Width="153" Click="Button_Click" FontSize="36"/>
-
-
-    </Grid>
+    <Grid/>
 </Page>

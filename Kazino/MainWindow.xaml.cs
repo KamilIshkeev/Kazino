@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Kazino.Base;
 using Kazino.Pages;
 
 namespace Kazino
@@ -47,6 +48,16 @@ namespace Kazino
         private void Button_Ruletka(object sender, RoutedEventArgs e)
         {
             MainFrame.NavigationService.Navigate(new RulePage(this));
+        }
+
+        private void Button_User(object sender, RoutedEventArgs e)
+        {
+            MainFrame.NavigationService.Navigate(new UserPage(this));
+        }
+
+        private void Button_History(object sender, RoutedEventArgs e)
+        {
+            MainFrame.NavigationService.Navigate(new HistoryGame(this));
         }
     }
 }

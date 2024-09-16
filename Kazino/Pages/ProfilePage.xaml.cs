@@ -1,4 +1,5 @@
-﻿using QRCoder;
+﻿using Kazino.Base;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -29,7 +30,7 @@ namespace Kazino.Pages
         {
             InitializeComponent();
             _mainWinsow = mainWindow;
-            QrCodeImage.Source = GenerateQrCodeBitmapImage("Кто привет тт привет");
+            QrCodeImage.Source = GenerateQrCodeBitmapImage("Всем привет");
         }
 
         private BitmapImage GenerateQrCodeBitmapImage(string text)
