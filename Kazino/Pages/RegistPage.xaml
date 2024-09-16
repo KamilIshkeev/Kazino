@@ -13,6 +13,7 @@
         <ui:TextBlock HorizontalAlignment="Left" Margin="563,154,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" FontSize="36"/>
         <ui:TextBox HorizontalAlignment="Left" Height="46" Margin="367,352,0,0" TextWrapping="Wrap" Text="Введите пароль" VerticalAlignment="Top" Width="500" FontSize="30" BorderBrush="Black" TextAlignment="Center" x:Name="txtPass"/>
         <ui:TextBlock HorizontalAlignment="Center" Margin="0,299,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" FontSize="36"/>
-        <ui:Button Content="Зарегистрироваться" Margin="433,426,0,0" VerticalAlignment="Top" Width="348" FontSize="30" Click="Button_Registration" />
+        <ui:Button Content="Зарегистрироваться" Margin="433,495,0,0" VerticalAlignment="Top" Width="348" FontSize="30" Click="Button_Registration" />
+        <CheckBox x:Name="chek_stat" Content="Админ" Height="40" Margin="409,440,0,0" VerticalAlignment="Top" Width="163" Checked="CheckBox_Checked" FontSize="36"  />
     </Grid>
 </Page>

@@ -14,8 +14,8 @@
         </Grid.ColumnDefinitions>
         <Frame x:Name="MainFrame"/>
         <Button Content="✕" Margin="1118,24,0,0" VerticalAlignment="Top" Width="50" Height="50" RenderTransformOrigin="1.58,0.34" Click="Button_Click_Exit"/>
-        <ui:Button Content="Profile" Margin="510,704,0,0" VerticalAlignment="Top" Width="204" Height="66" FontSize="36" Click="Button_Profile"/>
-        <ui:Button Content="Kosti" Margin="770,704,0,0" VerticalAlignment="Top" Width="204" Height="66" FontSize="36" Click="Button_Kosti"/>
-        <ui:Button Content="Ruletka" Margin="250,704,0,0" VerticalAlignment="Top" Width="204" Height="66" FontSize="36" Click="Button_Ruletka"/>
+        <ui:Button Content="Profile" Margin="510,730,0,0" VerticalAlignment="Top" Width="204" Height="46" FontSize="36" Click="Button_Profile"/>
+        <ui:Button Content="Kosti" Margin="770,730,0,0" VerticalAlignment="Top" Width="204" Height="46" FontSize="36" Click="Button_Kosti"/>
+        <ui:Button Content="Ruletka" Margin="250,730,0,0" VerticalAlignment="Top" Width="204" Height="46" FontSize="36" Click="Button_Ruletka"/>
     </Grid>
 </Window>

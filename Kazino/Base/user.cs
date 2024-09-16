@@ -27,7 +27,7 @@ namespace Kazino.Base
         public Nullable<int> credits { get; set; }
         public Nullable<System.DateTime> data_regist { get; set; }
         public Nullable<int> chips { get; set; }
-        public Nullable<int> id_status { get; set; }
+        public Nullable<bool> id_status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ind_history> ind_history { get; set; }
