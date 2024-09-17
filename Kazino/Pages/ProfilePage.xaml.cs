@@ -25,13 +25,27 @@ namespace Kazino.Pages
     /// </summary>
     public partial class ProfilePage : Page
     {
+        int useR;
+        string log;
+        string Pas;
+       
         static MainWindow _mainWinsow;
         public ProfilePage(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWinsow = mainWindow;
-            QrCodeImage.Source = GenerateQrCodeBitmapImage("Всем привет");
+            useR = RegistPage.User.id_user;
+            txtId.Text = Convert.ToString(useR);
+            log = RegistPage.User.login_user;
+            txtlogin.Text = log;
+            Pas = Convert.ToString(RegistPage.User.password);
+            txtpass.Text = Pas;
+            QrCodeImage.Source = GenerateQrCodeBitmapImage($"User: {log}, {Pas}");
         }
+
+
+
+
 
         private BitmapImage GenerateQrCodeBitmapImage(string text)
         {

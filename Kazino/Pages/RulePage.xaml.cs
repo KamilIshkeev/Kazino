@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kazino.Base;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,7 @@ namespace Kazino.Pages
             spinCount = 0;
             ResultTextBlock.Text = "";
             timer.Start(); // Начинаем таймер
+
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -96,7 +98,35 @@ namespace Kazino.Pages
                 {
                     itog_Stavki.Text = $"Итог: Вы проиграли {stavka}";
                 }
+
+
+var sumstav = Convert.ToInt32(Sum_Stavki.Text);
+            var dates = DateTime.Today;
+            var prof = Convert.ToInt32(Sum_Stavki.Text);
+            var game = 2;
+
+            var hz = connect.db.ind_history.FirstOrDefault(id => id.bet_credits == sumstav && id.date_game == dates && id.profit == prof && id.id_game == game);
+
+            var indhs = new ind_history()
+            {
+                bet_credits = sumstav,
+                date_game = dates,
+                profit = prof,
+                id_game = game
+            };
+
+            connect.db.ind_history.Add(indhs);
+            connect.db.SaveChanges();
+            return;
+
+
+
             }
+
+
+            
+
+
         }
     }
 }

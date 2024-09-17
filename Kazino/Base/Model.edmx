@@ -80,7 +80,7 @@
           <Property Name="credits" Type="int" />
           <Property Name="data_regist" Type="date" />
           <Property Name="chips" Type="int" />
-          <Property Name="id_status" Type="int" />
+          <Property Name="id_status" Type="bit" />
         </EntityType>
         <Association Name="FK_ind_history_game">
           <End Role="game" Type="Self.game" Multiplicity="0..1" />
@@ -341,7 +341,7 @@
           <Property Name="credits" Type="Int32" />
           <Property Name="data_regist" Type="DateTime" Precision="0" />
           <Property Name="chips" Type="Int32" />
-          <Property Name="id_status" Type="Int32" />
+          <Property Name="id_status" Type="Boolean" />
           <NavigationProperty Name="ind_history" Relationship="Kazino1337Model.FK_ind_history_user" FromRole="user" ToRole="ind_history" />
           <NavigationProperty Name="trade_chips" Relationship="Kazino1337Model.FK_trade_chips_user" FromRole="user" ToRole="trade_chips" />
         </EntityType>

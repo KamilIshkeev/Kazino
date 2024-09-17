@@ -25,6 +25,7 @@ namespace Kazino.Pages
     /// </summary>
     public partial class RegistPage : Page
     {
+        public static user User;
         static MainWindow _mainWindow;
         public RegistPage(MainWindow mainWindow)
         {
@@ -41,7 +42,7 @@ namespace Kazino.Pages
 
             // Проверяем, есть ли уже пользователь с таким логином в базе данных
             var existingUser = connect.db.user.FirstOrDefault(u => u.login_user == login);
-
+            User = existingUser;
             if (existingUser != null)
             {
                 // Если такой пользователь есть
@@ -69,6 +70,7 @@ namespace Kazino.Pages
                 MessageBox.Show("Пользователь зарегистрирован");
                 _mainWindow.MainFrame.NavigationService.Navigate(new MainPage(_mainWindow));
             }
+
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)

@@ -26,7 +26,8 @@ namespace Kazino.Pages
     public partial class KostiPage : Page
     {
         private Random random;
-        private DispatcherTimer timer; private int spinCount;
+        private DispatcherTimer timer; 
+        private int spinCount;
         static MainWindow _mainWindow;
         private Random random2;
         private int stavka;
@@ -61,14 +62,17 @@ namespace Kazino.Pages
             var sumstav = Convert.ToInt32(Sum_Stavki.Text);
             var dates = DateTime.Today;
             var prof = Convert.ToInt32(Sum_Stavki.Text);
+            var game = 1;
+            
 
-            var hz = connect.db.ind_history.FirstOrDefault(id => id.bet_credits == sumstav && id.date_game == dates && id.profit == prof);
+            var hz = connect.db.ind_history.FirstOrDefault(id => id.bet_credits == sumstav && id.date_game == dates && id.profit == prof && id.id_game == game);
 
             var indhs = new ind_history()
             {
                 bet_credits = sumstav,
                 date_game = dates,
                 profit = prof,
+                id_game = game
             };
 
             connect.db.ind_history.Add(indhs);

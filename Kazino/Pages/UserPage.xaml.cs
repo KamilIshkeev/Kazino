@@ -37,14 +37,17 @@ namespace Kazino.Pages
         {
             user users = ListUser.SelectedItem as user;
             users = connect.db.user.Find(users.id_status);
-            if(users != null)
+            if (users != null)
             {
-                users.id_status = 1;
+                users.id_status = true;
                 connect.db.SaveChanges();
                 ListUser.Items.Refresh();
             }
-            
+
+
+
 
         }
+
     }
 }
