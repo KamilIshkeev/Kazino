@@ -12,8 +12,8 @@
 
         <ui:TextBlock HorizontalAlignment="Left" Margin="522,0,0,0" TextWrapping="Wrap" Text="Профиль" VerticalAlignment="Top" FontSize="36"/>
         <Image x:Name="QrCodeImage" Width="100" Height="100" Margin="1080,64,50,636"/>
-        <TextBlock x:Name="txtId" TextWrapping="Wrap" Text="TextBlock" Margin="85,110,997,638"/>
-        <TextBlock x:Name="txtlogin" TextWrapping="Wrap" Text="TextBlock" Margin="85,171,997,577"/>
-        <TextBlock x:Name="txtpass" TextWrapping="Wrap" Text="TextBlock" Margin="85,232,997,516"/>
+        <TextBlock x:Name="txtId" TextWrapping="Wrap" Text="ID" Margin="85,110,997,638"/>
+        <TextBlock x:Name="txtlogin" TextWrapping="Wrap" Text="Login" Margin="85,171,997,577"/>
+        <TextBlock x:Name="txtpass" TextWrapping="Wrap" Text="Password" Margin="85,232,997,516"/>
     </Grid>
 </Page>

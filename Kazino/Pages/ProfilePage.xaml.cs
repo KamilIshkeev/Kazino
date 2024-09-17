@@ -28,6 +28,7 @@ namespace Kazino.Pages
         int useR;
         string log;
         string Pas;
+        int Cred;
        
         static MainWindow _mainWinsow;
         public ProfilePage(MainWindow mainWindow)
@@ -35,12 +36,15 @@ namespace Kazino.Pages
             InitializeComponent();
             _mainWinsow = mainWindow;
             useR = RegistPage.User.id_user;
-            txtId.Text = Convert.ToString(useR);
+            txtId.Text = $"ID:{Convert.ToString(useR)}"; //$"ID:{}"
             log = RegistPage.User.login_user;
-            txtlogin.Text = log;
+            txtlogin.Text = $"Login:{log}";
             Pas = Convert.ToString(RegistPage.User.password);
-            txtpass.Text = Pas;
+            txtpass.Text = $"Password:{Pas}";
+            //Cred = Convert.ToInt32(RegistPage.User.credits);
+
             QrCodeImage.Source = GenerateQrCodeBitmapImage($"User: {log}, {Pas}");
+
         }
 
 
