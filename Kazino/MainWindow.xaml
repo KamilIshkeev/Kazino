@@ -62,7 +62,7 @@
                 </LinearGradientBrush>
             </ui:Button.BorderBrush>
         </ui:Button>
-        <ui:Button Content="Users" Margin="1314,854,0,0" VerticalAlignment="Top" Width="134" Height="36" FontSize="36" Click="Button_User" Background="#B3D26262" Grid.Row="1"/>
+        <ui:Button Content="Users" Margin="1396,854,0,0" VerticalAlignment="Top" Width="134" Height="36" FontSize="36" Click="Button_User" Background="#B3D26262" Grid.Row="1"/>
         <ui:Button Content="History" Margin="1068,854,0,0" VerticalAlignment="Top" Width="134" Height="36" FontSize="36" Click="Button_History" Grid.Row="1">
             <ui:Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
@@ -82,6 +82,17 @@
                     </LinearGradientBrush.RelativeTransform>
                     <GradientStop Color="#29000000" Offset="0"/>
                     <GradientStop Color="#FFE6E6E6" Offset="0"/>
+                </LinearGradientBrush>
+            </ui:Button.BorderBrush>
+        </ui:Button>
+        <ui:Button Content="Transact" Margin="1207,854,0,0" VerticalAlignment="Top" Width="134" Height="36" FontSize="36" Click="Button_Transact" Grid.Row="1">
+            <ui:Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
+                    <LinearGradientBrush.RelativeTransform>
+                        <ScaleTransform CenterY="0.5" ScaleY="-1"/>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#29000000" Offset="0"/>
+                    <GradientStop Color="Red" Offset="0"/>
                 </LinearGradientBrush>
             </ui:Button.BorderBrush>
         </ui:Button>

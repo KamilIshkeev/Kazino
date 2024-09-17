@@ -400,7 +400,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Kazino1337Entities4" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Kazino1337Entities5" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="bank_kazino" EntityType="Self.bank_kazino" />
           <EntitySet Name="game" EntityType="Self.game" />
           <EntitySet Name="ind_history" EntityType="Self.ind_history" />
@@ -443,7 +443,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Kazino1337ModelContainer" CdmEntityContainer="Kazino1337Entities4">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Kazino1337ModelContainer" CdmEntityContainer="Kazino1337Entities5">
           <EntitySetMapping Name="bank_kazino">
             <EntityTypeMapping TypeName="Kazino1337Model.bank_kazino">
               <MappingFragment StoreEntitySet="bank_kazino">

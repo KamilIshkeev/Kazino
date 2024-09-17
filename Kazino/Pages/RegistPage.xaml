@@ -24,6 +24,6 @@
                 </LinearGradientBrush>
             </ui:Button.BorderBrush>
         </ui:Button>
-        <CheckBox x:Name="chek_stat" Content="Админ" Height="22" Margin="735,540,0,0" VerticalAlignment="Top" Width="163" Checked="CheckBox_Checked" FontSize="36"  />
+        <CheckBox x:Name="chek_stat" Content="Админ" Height="22" Margin="735,540,0,0" VerticalAlignment="Top" Width="163" Checked="CheckBox_Checked" FontSize="36" Cursor="Hand"  />
     </Grid>
 </Page>

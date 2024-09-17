@@ -151,6 +151,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\TransactPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\UserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -177,6 +181,9 @@
     </Compile>
     <Compile Include="Pages\RulePage.xaml.cs">
       <DependentUpon>RulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TransactPage.xaml.cs">
+      <DependentUpon>TransactPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>

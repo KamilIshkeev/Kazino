@@ -10,7 +10,7 @@ namespace Kazino.Base
 {
     public class connect
     {
-        public static Kazino1337Entities4 db = new Kazino1337Entities4();
+        public static Kazino1337Entities5 db = new Kazino1337Entities5();
         public static RegistPage user;
     }
 

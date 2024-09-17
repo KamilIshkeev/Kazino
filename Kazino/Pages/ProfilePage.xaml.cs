@@ -78,6 +78,21 @@ namespace Kazino.Pages
             RegistPage.User.credits = Cred + Convert.ToInt32(txtcredit.Text);
             txtcredit2.Text = Convert.ToString(Cred + Convert.ToInt32(txtcredit.Text));
             connect.db.SaveChanges();
+
+            var sum_transact = Convert.ToInt32(txtcredit.Text);
+            var idbank = 1;
+
+            var hz2 = connect.db.transactions.FirstOrDefault(id => id.transact_sum == sum_transact && id.id_bank == idbank);
+
+            var trns = new transactions()
+            {
+                transact_sum = sum_transact,
+                id_bank = idbank,
+            };
+
+            connect.db.transactions.Add(trns);
+            connect.db.SaveChanges();
+            return;
         }
     }
 }

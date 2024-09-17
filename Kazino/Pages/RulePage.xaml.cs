@@ -81,41 +81,61 @@ namespace Kazino.Pages
                 if (result == result1 && result1 == result2 && kf < 3)
                 {
                     itog_Stavki.Text = $"Итог: Вы выиграли {stavka * 5}";
+                    RegistPage.User.credits += stavka * 5;
                 }
                 else if (result == result1 && result1 == result2 && kf < 5)
                 {
                     itog_Stavki.Text = $"Итог: Вы выиграли {stavka * 15}";
+                    RegistPage.User.credits += stavka * 15;
                 }
                 else if (result == result1 && result1 == result2 && kf < 10)
                 {
                     itog_Stavki.Text = $"Итог: Вы выиграли {stavka * 25}";
+                    RegistPage.User.credits += stavka * 25;
                 }
                 else if (result == result1 && result1 == result2 && kf < 15)
                 {
                     itog_Stavki.Text = $"Итог: Вы выиграли {stavka * 30}";
+                    RegistPage.User.credits += stavka * 30;
                 }
                 else
                 {
                     itog_Stavki.Text = $"Итог: Вы проиграли {stavka}";
+                    RegistPage.User.credits -= stavka;
                 }
 
 
             var sumstav = Convert.ToInt32(Sum_Stavki.Text);
             var dates = DateTime.Today;
             var prof = Convert.ToInt32(Sum_Stavki.Text);
-
-            var hz = connect.db.ind_history.FirstOrDefault(id => id.bet_credits == sumstav && id.date_game == dates && id.profit == prof);
+            var game = 2;
+            var hz = connect.db.ind_history.FirstOrDefault(id => id.bet_credits == sumstav && id.date_game == dates && id.profit == prof && id.id_game == game);  
 
             var indhs = new ind_history()
             {
                 bet_credits = sumstav,
                 date_game = dates,
                 profit = prof,
+                id_game = game
             };
 
             connect.db.ind_history.Add(indhs);
             connect.db.SaveChanges();
-            return;
+
+                var sum_transact = Convert.ToInt32(Sum_Stavki.Text);
+                var idbank = 1;
+
+                var hz2 = connect.db.transactions.FirstOrDefault(id => id.transact_sum == sum_transact && id.id_bank == idbank);
+
+                var trns = new transactions()
+                {
+                    transact_sum = sumstav,
+                    id_bank = idbank,
+                };
+
+                connect.db.transactions.Add(trns);
+                connect.db.SaveChanges();
+                return;
 
 
 

@@ -77,35 +77,50 @@ namespace Kazino.Pages
 
             connect.db.ind_history.Add(indhs);
             connect.db.SaveChanges();
+            
+            var sum_transact = Convert.ToInt32(Sum_Stavki.Text);
+            var idbank = 1;
+
+            var hz2 = connect.db.transactions.FirstOrDefault(id => id.transact_sum == sum_transact && id.id_bank == idbank);
+            
+            var trns = new transactions()
+            {
+                 transact_sum = sumstav,
+                 id_bank = idbank,
+            };
+
+            connect.db.transactions.Add(trns);
+            connect.db.SaveChanges();
             return;
         }
 
         private void RollButtonClick()
         {
-            Random random2 = new Random();
-            result2 = random2.Next(1, 7);
+                Random random2 = new Random();
+                result2 = random2.Next(1, 7);
 
-            // Отображение результата в TextBlock
-            resultTextBlock2.Text = "Результат: " + result2;
+                // Отображение результата в TextBlock
+                resultTextBlock2.Text = "Результат: " + result2;
 
-            // Отображение соответствующего изображения кубика
-            diceImage2.Source =
-                new BitmapImage(new Uri($"Img/dice{result2}.png", UriKind.Relative));
+                // Отображение соответствующего изображения кубика
+                diceImage2.Source =
+                    new BitmapImage(new Uri($"Img/dice{result2}.png", UriKind.Relative));
 
-            if (result > result2)
-            {
-                itog_Stavki.Text = $"Итог: Вы выиграли {stavka}";
-                RegistPage.User.credits += stavka;
-            }
-            if (result < result2)
-            {
-                itog_Stavki.Text = $"Итог: Вы проиграли {stavka}";
-                RegistPage.User.credits -= stavka;
-            }
-            if (result == result2)
-            {
-                itog_Stavki.Text = $"Итог: Ничья, никто не забрал ставку";
-            }
+                if (result > result2)
+                {
+                    itog_Stavki.Text = $"Итог: Вы выиграли {stavka}";
+                    RegistPage.User.credits += stavka;
+                }
+                if (result < result2)
+                {
+                    itog_Stavki.Text = $"Итог: Вы проиграли {stavka}";
+                    RegistPage.User.credits -= stavka;
+                }
+                if (result == result2)
+                {
+                    itog_Stavki.Text = $"Итог: Ничья, никто не забрал ставку";
+                }
+            
 
         }
 

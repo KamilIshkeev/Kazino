@@ -64,5 +64,10 @@ namespace Kazino
         {
             MainFrame.NavigationService.Navigate(new RegistPage(this));
         }
+
+        private void Button_Transact(object sender, RoutedEventArgs e)
+        {
+            MainFrame.NavigationService.Navigate(new TransactPage(this));
+        }
     }
 }

@@ -9,7 +9,7 @@
       Title="UserPage">
 
     <Grid>
-        <ListView Name="ListUser" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="White" Margin="0,130,0,218">
+        <ListView Name="ListUser" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="White" Margin="10,174,-10,174">
             <ListView.View >
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=id_user}" Width="120">ID Пользователя</GridViewColumn>

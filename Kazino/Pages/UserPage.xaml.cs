@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Kazino.Pages;
 
 namespace Kazino.Pages
 {
@@ -42,6 +43,12 @@ namespace Kazino.Pages
                 users.id_status = true;
                 connect.db.SaveChanges();
                 ListUser.Items.Refresh();
+            }
+            else
+            {
+                //users.id_status = false;
+                //connect.db.SaveChanges();
+                //ListUser.Items.Refresh();
             }
 
 

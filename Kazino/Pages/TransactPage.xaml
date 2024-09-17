@@ -1,0 +1,25 @@
+﻿<Page x:Class="Kazino.Pages.TransactPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kazino.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920" Background="white"
+      Title="TransactPage">
+
+    <Grid>
+        <ListView x:Name="ListTransact" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="White" Margin="0,210,0,185">
+            <ListView.View >
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding id_transact}" Width="120" Header="ID транзакции"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding id_history}" Width="150" Header="ID истории"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding transact_sum}" Width="85" Header="Сумма транзакции"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding id_bank}" Width="120" Header="ID банка"/>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+
+    </Grid>
+</Page>
