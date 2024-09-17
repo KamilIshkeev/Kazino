@@ -29,7 +29,7 @@ namespace Kazino.Pages
         string log;
         string Pas;
         int Cred;
-       
+
         static MainWindow _mainWinsow;
         public ProfilePage(MainWindow mainWindow)
         {
@@ -41,9 +41,9 @@ namespace Kazino.Pages
             txtlogin.Text = $"Login:{log}";
             Pas = Convert.ToString(RegistPage.User.password);
             txtpass.Text = $"Password:{Pas}";
-            //Cred = Convert.ToInt32(RegistPage.User.credits);
-
-            QrCodeImage.Source = GenerateQrCodeBitmapImage($"User: {log}, {Pas}");
+            Cred = Convert.ToInt32(RegistPage.User.credits);
+            QrCodeImage.Source = GenerateQrCodeBitmapImage($"User: {log}, {Pas}, {Cred}");
+            txtcredit2.Text = Convert.ToString(Cred);
 
         }
 
@@ -71,6 +71,13 @@ namespace Kazino.Pages
                     }
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RegistPage.User.credits = Cred + Convert.ToInt32(txtcredit.Text);
+            txtcredit2.Text = Convert.ToString(Cred + Convert.ToInt32(txtcredit.Text));
+            connect.db.SaveChanges();
         }
     }
 }

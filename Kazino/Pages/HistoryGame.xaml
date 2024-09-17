@@ -5,11 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Kazino.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="1230" Background="White"
+      d:DesignHeight="1080" d:DesignWidth="1920" Background="White"
       Title="HistoryGame">
 
     <Grid>
-        <ListView x:Name="ListHistory" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="White" Margin="0,152,0,243">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="ListHistory" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="White" Margin="0,102,0,293" Grid.RowSpan="2">
             <ListView.View >
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding id_history}" Width="120" Header="ID истории игры"/>

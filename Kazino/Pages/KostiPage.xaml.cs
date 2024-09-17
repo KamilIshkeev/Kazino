@@ -26,7 +26,7 @@ namespace Kazino.Pages
     public partial class KostiPage : Page
     {
         private Random random;
-        private DispatcherTimer timer; 
+        private DispatcherTimer timer;
         private int spinCount;
         static MainWindow _mainWindow;
         private Random random2;
@@ -44,7 +44,7 @@ namespace Kazino.Pages
 
         private void RollButtonClick(object sender, RoutedEventArgs e)
         {
-            if(Sum_Stavki.Text == "Укажите сумму ставки")
+            if (Sum_Stavki.Text == "Укажите сумму ставки")
             {
                 Sum_Stavki.Text = "1000";
             }
@@ -63,7 +63,7 @@ namespace Kazino.Pages
             var dates = DateTime.Today;
             var prof = Convert.ToInt32(Sum_Stavki.Text);
             var game = 1;
-            
+
 
             var hz = connect.db.ind_history.FirstOrDefault(id => id.bet_credits == sumstav && id.date_game == dates && id.profit == prof && id.id_game == game);
 
@@ -92,20 +92,23 @@ namespace Kazino.Pages
             diceImage2.Source =
                 new BitmapImage(new Uri($"Img/dice{result2}.png", UriKind.Relative));
 
-            if(result > result2)
+            if (result > result2)
             {
                 itog_Stavki.Text = $"Итог: Вы выиграли {stavka}";
+                RegistPage.User.credits += stavka;
             }
-            if(result < result2)
+            if (result < result2)
             {
                 itog_Stavki.Text = $"Итог: Вы проиграли {stavka}";
+                RegistPage.User.credits -= stavka;
             }
             if (result == result2)
             {
                 itog_Stavki.Text = $"Итог: Ничья, никто не забрал ставку";
             }
+
         }
 
-       
+
     }
 }

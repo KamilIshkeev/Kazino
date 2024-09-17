@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kazino"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="Kazino.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Width="1230" Height="800">
+        Title="MainWindow" Width="1920" Height="1080">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="121*"/>
@@ -17,8 +17,8 @@
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Frame x:Name="MainFrame" Grid.RowSpan="2"/>
-        <Image Source="Pages/Img/casino.png" Margin="44,-2,1086,21"/>
-        <Button Content="✕" Margin="1184,10,0,0" VerticalAlignment="Top" Width="35" Height="35" RenderTransformOrigin="1.58,0.34" Click="Button_Click_Exit">
+        <Image Source="Pages/Img/casino.png" Margin="0,-5,1748,24"/>
+        <Button Content="✕" Margin="1875,10,0,0" VerticalAlignment="Top" Width="35" Height="35" RenderTransformOrigin="1.58,0.34" Click="Button_Click_Exit">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
                     <LinearGradientBrush.RelativeTransform>
@@ -29,7 +29,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <ui:Button Content="Profile" Margin="563,617,0,0" VerticalAlignment="Top" Width="133" Height="36" FontSize="36" Click="Button_Profile" Grid.Row="1">
+        <ui:Button Content="Profile" Margin="792,854,0,0" VerticalAlignment="Top" Width="134" Height="36" FontSize="36" Click="Button_Profile" Grid.Row="1">
             <ui:Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
                     <LinearGradientBrush.RelativeTransform>
@@ -40,7 +40,7 @@
                 </LinearGradientBrush>
             </ui:Button.BorderBrush>
         </ui:Button>
-        <ui:Button Content="Kosti" Margin="701,617,0,0" VerticalAlignment="Top" Width="133" Height="36" FontSize="36" Click="Button_Kosti" Grid.Row="1">
+        <ui:Button Content="Kosti" Margin="930,854,0,0" VerticalAlignment="Top" Width="134" Height="36" FontSize="36" Click="Button_Kosti" Grid.Row="1">
             <ui:Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
                     <LinearGradientBrush.RelativeTransform>
@@ -51,7 +51,7 @@
                 </LinearGradientBrush>
             </ui:Button.BorderBrush>
         </ui:Button>
-        <ui:Button Content="Ruletka" Margin="425,617,0,0" VerticalAlignment="Top" Width="133" Height="36" FontSize="36" Click="Button_Ruletka" Grid.Row="1">
+        <ui:Button Content="Ruletka" Margin="654,854,0,0" VerticalAlignment="Top" Width="134" Height="36" FontSize="36" Click="Button_Ruletka" Grid.Row="1">
             <ui:Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
                     <LinearGradientBrush.RelativeTransform>
@@ -62,9 +62,8 @@
                 </LinearGradientBrush>
             </ui:Button.BorderBrush>
         </ui:Button>
-        <ui:Button Content="Users" Margin="1085,617,0,0" VerticalAlignment="Top" Width="134" Height="36" FontSize="36" Click="Button_User" Background="#B3D26262" Grid.Row="1"/>
-        <TextBlock x:Name="balance" HorizontalAlignment="Left" Margin="74,617,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" FontSize="25" Width="288" Grid.Row="1" />
-        <ui:Button Content="History" Margin="839,617,0,0" VerticalAlignment="Top" Width="133" Height="36" FontSize="36" Click="Button_History" Grid.Row="1">
+        <ui:Button Content="Users" Margin="1314,854,0,0" VerticalAlignment="Top" Width="134" Height="36" FontSize="36" Click="Button_User" Background="#B3D26262" Grid.Row="1"/>
+        <ui:Button Content="History" Margin="1068,854,0,0" VerticalAlignment="Top" Width="134" Height="36" FontSize="36" Click="Button_History" Grid.Row="1">
             <ui:Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
                     <LinearGradientBrush.RelativeTransform>
@@ -72,6 +71,17 @@
                     </LinearGradientBrush.RelativeTransform>
                     <GradientStop Color="#29000000" Offset="0"/>
                     <GradientStop Color="Red" Offset="0"/>
+                </LinearGradientBrush>
+            </ui:Button.BorderBrush>
+        </ui:Button>
+        <ui:Button Content="Вход/Регистрация" Margin="19,141,0,0" VerticalAlignment="Top" Width="139" Height="36" FontSize="36" Click="Button_Vhod" Grid.RowSpan="2">
+            <ui:Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
+                    <LinearGradientBrush.RelativeTransform>
+                        <ScaleTransform CenterY="0.5" ScaleY="-1"/>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#29000000" Offset="0"/>
+                    <GradientStop Color="#FFE6E6E6" Offset="0"/>
                 </LinearGradientBrush>
             </ui:Button.BorderBrush>
         </ui:Button>

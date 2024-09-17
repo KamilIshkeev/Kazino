@@ -226,6 +226,9 @@
     <Resource Include="Pages\Img\dice1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Pages\Img\casino.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Base\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -236,7 +239,6 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Resource Include="Pages\Img\casino.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

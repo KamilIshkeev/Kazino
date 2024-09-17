@@ -59,5 +59,10 @@ namespace Kazino
         {
             MainFrame.NavigationService.Navigate(new HistoryGame(this));
         }
+
+        private void Button_Vhod(object sender, RoutedEventArgs e)
+        {
+            MainFrame.NavigationService.Navigate(new RegistPage(this));
+        }
     }
 }

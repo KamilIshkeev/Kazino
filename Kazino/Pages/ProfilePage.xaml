@@ -15,5 +15,8 @@
         <TextBlock x:Name="txtId" TextWrapping="Wrap" Text="ID" Margin="85,110,997,638"/>
         <TextBlock x:Name="txtlogin" TextWrapping="Wrap" Text="Login" Margin="85,171,997,577"/>
         <TextBlock x:Name="txtpass" TextWrapping="Wrap" Text="Password" Margin="85,232,997,516"/>
+        <TextBox x:Name="txtcredit" TextWrapping="Wrap" Text="Введите сумму пополнения " Margin="85,308,935,458"/>
+        <Button Content="Пополнить" Height="36" Margin="85,356,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click"/>
+        <TextBlock x:Name="txtcredit2" TextWrapping="Wrap" Text="" Margin="85,281,997,497"/>
     </Grid>
 </Page>

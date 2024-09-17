@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Kazino.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="1230" Background="White"
+      d:DesignHeight="1080" d:DesignWidth="1920" Background="White"
       Title="UserPage">
 
     <Grid>
-        <ListView Name="ListUser" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="White" Margin="0,132,0,216">
+        <ListView Name="ListUser" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="White" Margin="0,130,0,218">
             <ListView.View >
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=id_user}" Width="120">ID Пользователя</GridViewColumn>

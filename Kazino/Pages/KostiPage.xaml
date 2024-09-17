@@ -5,12 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Kazino.Pages"
       mc:Ignorable="d"  Background="white"
-      Title="KostiPage" Width="1230" Height="800">
-
+      Title="KostiPage" Width="1920" Height="1080">
     <Grid>
 
-        <Image x:Name="diceImage" Source="Img/dice1.png" Width="100" Height="100" />
-        <Button x:Name="rollButton" Content="Бросить кубики" Click="RollButtonClick" Margin="750,311,0,0" VerticalAlignment="Top" FontSize="20" >
+        <Image x:Name="diceImage" Source="Img/dice1.png" Width="100" Height="100" Margin="922,490,898,490" />
+        <Button x:Name="rollButton" Content="Бросить кубики" Click="RollButtonClick" Margin="762,427,0,0" VerticalAlignment="Top" FontSize="20" >
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
                     <LinearGradientBrush.RelativeTransform>
@@ -21,11 +20,11 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <TextBlock x:Name="resultTextBlock" Text="Результат:" FontSize="20" Margin="750,406,338,363" />
-        <Label Content="Ставка:" HorizontalAlignment="Left" Height="24" Margin="233,317,0,0" VerticalAlignment="Top" Width="52" FontSize="36" Foreground="Red"/>
-        <Image x:Name="diceImage2" Source="/Pages/Img/dice1.png" Margin="585,209,585,531" OpacityMask="#7F000000" />
-        <TextBlock x:Name="resultTextBlock2" Text="Результат:" FontSize="20" Margin="750,217,338,545" Focusable="True" Background="#00000000" Foreground="#7F000000" />
-        <TextBox x:Name="Sum_Stavki" HorizontalAlignment="Left" Height="36" Margin="290,310,0,0" TextWrapping="Wrap" Text="Укажите сумму ставки" VerticalAlignment="Top" Width="176">
+        <TextBlock x:Name="resultTextBlock" Text="Результат:" FontSize="20" Margin="762,522,982,521" />
+        <Label Content="Ставка:" HorizontalAlignment="Left" Height="24" Margin="245,433,0,0" VerticalAlignment="Top" Width="52" FontSize="36" Foreground="Red"/>
+        <Image x:Name="diceImage2" Source="/Pages/Img/dice1.png" Margin="907,319,883,702" OpacityMask="#7F000000" />
+        <TextBlock x:Name="resultTextBlock2" Text="Результат:" FontSize="20" Margin="762,333,982,702" Focusable="True" Background="#00000000" Foreground="#7F000000" />
+        <TextBox x:Name="Sum_Stavki" HorizontalAlignment="Left" Height="36" Margin="302,426,0,0" TextWrapping="Wrap" Text="Укажите сумму ставки" VerticalAlignment="Top" Width="176">
             <TextBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0,2">
                     <GradientStop Color="#0F000000"/>
@@ -33,7 +32,8 @@
                 </LinearGradientBrush>
             </TextBox.BorderBrush>
         </TextBox>
-        <TextBlock x:Name="itog_Stavki" HorizontalAlignment="Left" Margin="996,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="204"><Run Language="ru-ru" Text="Итог"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="itog_Stavki" HorizontalAlignment="Left" Margin="1008,431,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="204"><Run Language="ru-ru" Text="Итог"/><Run Text=":"/></TextBlock>
 
     </Grid>
+
 </Page>

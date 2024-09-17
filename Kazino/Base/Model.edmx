@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище Kazino1337Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище Kazino1337Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="bank_kazino">
           <Key>
             <PropertyRef Name="id_bank" />
@@ -212,48 +212,11 @@
             <End Role="transactions" EntitySet="transactions" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Kazino1337Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="Kazino1337Entities2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="bank_kazino" EntityType="Kazino1337Model.bank_kazino" />
-          <EntitySet Name="game" EntityType="Kazino1337Model.game" />
-          <EntitySet Name="ind_history" EntityType="Kazino1337Model.ind_history" />
-          <EntitySet Name="rep_game" EntityType="Kazino1337Model.rep_game" />
-          <EntitySet Name="sysdiagrams" EntityType="Kazino1337Model.sysdiagrams" />
-          <EntitySet Name="trade_chips" EntityType="Kazino1337Model.trade_chips" />
-          <EntitySet Name="transactions" EntityType="Kazino1337Model.transactions" />
-          <EntitySet Name="user" EntityType="Kazino1337Model.user" />
-          <AssociationSet Name="FK_trade_chips_bank_kazino" Association="Kazino1337Model.FK_trade_chips_bank_kazino">
-            <End Role="bank_kazino" EntitySet="bank_kazino" />
-            <End Role="trade_chips" EntitySet="trade_chips" />
-          </AssociationSet>
-          <AssociationSet Name="FK_transactions_bank_kazino" Association="Kazino1337Model.FK_transactions_bank_kazino">
-            <End Role="bank_kazino" EntitySet="bank_kazino" />
-            <End Role="transactions" EntitySet="transactions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ind_history_game" Association="Kazino1337Model.FK_ind_history_game">
-            <End Role="game" EntitySet="game" />
-            <End Role="ind_history" EntitySet="ind_history" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ind_history_user" Association="Kazino1337Model.FK_ind_history_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="ind_history" EntitySet="ind_history" />
-          </AssociationSet>
-          <AssociationSet Name="FK_rep_game_ind_history" Association="Kazino1337Model.FK_rep_game_ind_history">
-            <End Role="ind_history" EntitySet="ind_history" />
-            <End Role="rep_game" EntitySet="rep_game" />
-          </AssociationSet>
-          <AssociationSet Name="FK_transactions_ind_history" Association="Kazino1337Model.FK_transactions_ind_history">
-            <End Role="ind_history" EntitySet="ind_history" />
-            <End Role="transactions" EntitySet="transactions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_trade_chips_user" Association="Kazino1337Model.FK_trade_chips_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="trade_chips" EntitySet="trade_chips" />
-          </AssociationSet>
-        </EntityContainer>
         <EntityType Name="bank_kazino">
           <Key>
             <PropertyRef Name="id_bank" />
@@ -261,8 +224,8 @@
           <Property Name="id_bank" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="credits" Type="Int32" />
           <Property Name="chips" Type="Int32" />
-          <NavigationProperty Name="trade_chips" Relationship="Kazino1337Model.FK_trade_chips_bank_kazino" FromRole="bank_kazino" ToRole="trade_chips" />
-          <NavigationProperty Name="transactions" Relationship="Kazino1337Model.FK_transactions_bank_kazino" FromRole="bank_kazino" ToRole="transactions" />
+          <NavigationProperty Name="trade_chips" Relationship="Self.FK_trade_chips_bank_kazino" FromRole="bank_kazino" ToRole="trade_chips" />
+          <NavigationProperty Name="transactions" Relationship="Self.FK_transactions_bank_kazino" FromRole="bank_kazino" ToRole="transactions" />
         </EntityType>
         <EntityType Name="game">
           <Key>
@@ -272,7 +235,7 @@
           <Property Name="name_game" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="max_bet" Type="Int32" />
           <Property Name="min_bet" Type="Int32" />
-          <NavigationProperty Name="ind_history" Relationship="Kazino1337Model.FK_ind_history_game" FromRole="game" ToRole="ind_history" />
+          <NavigationProperty Name="ind_history" Relationship="Self.FK_ind_history_game" FromRole="game" ToRole="ind_history" />
         </EntityType>
         <EntityType Name="ind_history">
           <Key>
@@ -284,10 +247,10 @@
           <Property Name="profit" Type="Int32" />
           <Property Name="date_game" Type="DateTime" Precision="0" />
           <Property Name="id_user" Type="Int32" />
-          <NavigationProperty Name="game" Relationship="Kazino1337Model.FK_ind_history_game" FromRole="ind_history" ToRole="game" />
-          <NavigationProperty Name="user" Relationship="Kazino1337Model.FK_ind_history_user" FromRole="ind_history" ToRole="user" />
-          <NavigationProperty Name="rep_game" Relationship="Kazino1337Model.FK_rep_game_ind_history" FromRole="ind_history" ToRole="rep_game" />
-          <NavigationProperty Name="transactions" Relationship="Kazino1337Model.FK_transactions_ind_history" FromRole="ind_history" ToRole="transactions" />
+          <NavigationProperty Name="game" Relationship="Self.FK_ind_history_game" FromRole="ind_history" ToRole="game" />
+          <NavigationProperty Name="user" Relationship="Self.FK_ind_history_user" FromRole="ind_history" ToRole="user" />
+          <NavigationProperty Name="rep_game" Relationship="Self.FK_rep_game_ind_history" FromRole="ind_history" ToRole="rep_game" />
+          <NavigationProperty Name="transactions" Relationship="Self.FK_transactions_ind_history" FromRole="ind_history" ToRole="transactions" />
         </EntityType>
         <EntityType Name="rep_game">
           <Key>
@@ -296,13 +259,13 @@
           <Property Name="id_rep" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_history" Type="Int32" />
           <Property Name="bet_credits" Type="Int32" />
-          <NavigationProperty Name="ind_history" Relationship="Kazino1337Model.FK_rep_game_ind_history" FromRole="rep_game" ToRole="ind_history" />
+          <NavigationProperty Name="ind_history" Relationship="Self.FK_rep_game_ind_history" FromRole="rep_game" ToRole="ind_history" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
@@ -317,8 +280,8 @@
           <Property Name="id_user" Type="Int32" />
           <Property Name="credits" Type="Int32" />
           <Property Name="chips" Type="Int32" />
-          <NavigationProperty Name="bank_kazino" Relationship="Kazino1337Model.FK_trade_chips_bank_kazino" FromRole="trade_chips" ToRole="bank_kazino" />
-          <NavigationProperty Name="user" Relationship="Kazino1337Model.FK_trade_chips_user" FromRole="trade_chips" ToRole="user" />
+          <NavigationProperty Name="bank_kazino" Relationship="Self.FK_trade_chips_bank_kazino" FromRole="trade_chips" ToRole="bank_kazino" />
+          <NavigationProperty Name="user" Relationship="Self.FK_trade_chips_user" FromRole="trade_chips" ToRole="user" />
         </EntityType>
         <EntityType Name="transactions">
           <Key>
@@ -328,8 +291,8 @@
           <Property Name="id_history" Type="Int32" />
           <Property Name="transact_sum" Type="Int32" />
           <Property Name="id_bank" Type="Int32" />
-          <NavigationProperty Name="bank_kazino" Relationship="Kazino1337Model.FK_transactions_bank_kazino" FromRole="transactions" ToRole="bank_kazino" />
-          <NavigationProperty Name="ind_history" Relationship="Kazino1337Model.FK_transactions_ind_history" FromRole="transactions" ToRole="ind_history" />
+          <NavigationProperty Name="bank_kazino" Relationship="Self.FK_transactions_bank_kazino" FromRole="transactions" ToRole="bank_kazino" />
+          <NavigationProperty Name="ind_history" Relationship="Self.FK_transactions_ind_history" FromRole="transactions" ToRole="ind_history" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -342,14 +305,14 @@
           <Property Name="data_regist" Type="DateTime" Precision="0" />
           <Property Name="chips" Type="Int32" />
           <Property Name="id_status" Type="Boolean" />
-          <NavigationProperty Name="ind_history" Relationship="Kazino1337Model.FK_ind_history_user" FromRole="user" ToRole="ind_history" />
-          <NavigationProperty Name="trade_chips" Relationship="Kazino1337Model.FK_trade_chips_user" FromRole="user" ToRole="trade_chips" />
+          <NavigationProperty Name="ind_history" Relationship="Self.FK_ind_history_user" FromRole="user" ToRole="ind_history" />
+          <NavigationProperty Name="trade_chips" Relationship="Self.FK_trade_chips_user" FromRole="user" ToRole="trade_chips" />
         </EntityType>
         <Association Name="FK_trade_chips_bank_kazino">
-          <End Type="Kazino1337Model.bank_kazino" Role="bank_kazino" Multiplicity="0..1">
+          <End Role="bank_kazino" Type="Self.bank_kazino" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="Kazino1337Model.trade_chips" Role="trade_chips" Multiplicity="*" />
+          <End Role="trade_chips" Type="Self.trade_chips" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="bank_kazino">
               <PropertyRef Name="id_bank" />
@@ -360,10 +323,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_transactions_bank_kazino">
-          <End Type="Kazino1337Model.bank_kazino" Role="bank_kazino" Multiplicity="0..1">
+          <End Role="bank_kazino" Type="Self.bank_kazino" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="Kazino1337Model.transactions" Role="transactions" Multiplicity="*" />
+          <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="bank_kazino">
               <PropertyRef Name="id_bank" />
@@ -374,8 +337,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ind_history_game">
-          <End Type="Kazino1337Model.game" Role="game" Multiplicity="0..1" />
-          <End Type="Kazino1337Model.ind_history" Role="ind_history" Multiplicity="*" />
+          <End Role="game" Type="Self.game" Multiplicity="0..1" />
+          <End Role="ind_history" Type="Self.ind_history" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="game">
               <PropertyRef Name="id_game" />
@@ -386,10 +349,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ind_history_user">
-          <End Type="Kazino1337Model.user" Role="user" Multiplicity="0..1">
+          <End Role="user" Type="Self.user" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="Kazino1337Model.ind_history" Role="ind_history" Multiplicity="*" />
+          <End Role="ind_history" Type="Self.ind_history" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="id_user" />
@@ -400,8 +363,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_rep_game_ind_history">
-          <End Type="Kazino1337Model.ind_history" Role="ind_history" Multiplicity="0..1" />
-          <End Type="Kazino1337Model.rep_game" Role="rep_game" Multiplicity="*" />
+          <End Role="ind_history" Type="Self.ind_history" Multiplicity="0..1" />
+          <End Role="rep_game" Type="Self.rep_game" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ind_history">
               <PropertyRef Name="id_history" />
@@ -412,8 +375,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_transactions_ind_history">
-          <End Type="Kazino1337Model.ind_history" Role="ind_history" Multiplicity="0..1" />
-          <End Type="Kazino1337Model.transactions" Role="transactions" Multiplicity="*" />
+          <End Role="ind_history" Type="Self.ind_history" Multiplicity="0..1" />
+          <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ind_history">
               <PropertyRef Name="id_history" />
@@ -424,10 +387,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_trade_chips_user">
-          <End Type="Kazino1337Model.user" Role="user" Multiplicity="0..1">
+          <End Role="user" Type="Self.user" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="Kazino1337Model.trade_chips" Role="trade_chips" Multiplicity="*" />
+          <End Role="trade_chips" Type="Self.trade_chips" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="id_user" />
@@ -437,94 +400,132 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        </Schema>
+        <EntityContainer Name="Kazino1337Entities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bank_kazino" EntityType="Self.bank_kazino" />
+          <EntitySet Name="game" EntityType="Self.game" />
+          <EntitySet Name="ind_history" EntityType="Self.ind_history" />
+          <EntitySet Name="rep_game" EntityType="Self.rep_game" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="trade_chips" EntityType="Self.trade_chips" />
+          <EntitySet Name="transactions" EntityType="Self.transactions" />
+          <EntitySet Name="user" EntityType="Self.user" />
+          <AssociationSet Name="FK_trade_chips_bank_kazino" Association="Self.FK_trade_chips_bank_kazino">
+            <End Role="bank_kazino" EntitySet="bank_kazino" />
+            <End Role="trade_chips" EntitySet="trade_chips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_bank_kazino" Association="Self.FK_transactions_bank_kazino">
+            <End Role="bank_kazino" EntitySet="bank_kazino" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ind_history_game" Association="Self.FK_ind_history_game">
+            <End Role="game" EntitySet="game" />
+            <End Role="ind_history" EntitySet="ind_history" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ind_history_user" Association="Self.FK_ind_history_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="ind_history" EntitySet="ind_history" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rep_game_ind_history" Association="Self.FK_rep_game_ind_history">
+            <End Role="ind_history" EntitySet="ind_history" />
+            <End Role="rep_game" EntitySet="rep_game" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_ind_history" Association="Self.FK_transactions_ind_history">
+            <End Role="ind_history" EntitySet="ind_history" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trade_chips_user" Association="Self.FK_trade_chips_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="trade_chips" EntitySet="trade_chips" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Kazino1337ModelContainer" CdmEntityContainer="Kazino1337Entities2">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Kazino1337ModelContainer" CdmEntityContainer="Kazino1337Entities4">
           <EntitySetMapping Name="bank_kazino">
             <EntityTypeMapping TypeName="Kazino1337Model.bank_kazino">
               <MappingFragment StoreEntitySet="bank_kazino">
-                <ScalarProperty Name="chips" ColumnName="chips" />
-                <ScalarProperty Name="credits" ColumnName="credits" />
                 <ScalarProperty Name="id_bank" ColumnName="id_bank" />
+                <ScalarProperty Name="credits" ColumnName="credits" />
+                <ScalarProperty Name="chips" ColumnName="chips" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="game">
             <EntityTypeMapping TypeName="Kazino1337Model.game">
               <MappingFragment StoreEntitySet="game">
-                <ScalarProperty Name="min_bet" ColumnName="min_bet" />
-                <ScalarProperty Name="max_bet" ColumnName="max_bet" />
-                <ScalarProperty Name="name_game" ColumnName="name_game" />
                 <ScalarProperty Name="id_game" ColumnName="id_game" />
+                <ScalarProperty Name="name_game" ColumnName="name_game" />
+                <ScalarProperty Name="max_bet" ColumnName="max_bet" />
+                <ScalarProperty Name="min_bet" ColumnName="min_bet" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ind_history">
             <EntityTypeMapping TypeName="Kazino1337Model.ind_history">
               <MappingFragment StoreEntitySet="ind_history">
-                <ScalarProperty Name="id_user" ColumnName="id_user" />
-                <ScalarProperty Name="date_game" ColumnName="date_game" />
-                <ScalarProperty Name="profit" ColumnName="profit" />
-                <ScalarProperty Name="bet_credits" ColumnName="bet_credits" />
-                <ScalarProperty Name="id_game" ColumnName="id_game" />
                 <ScalarProperty Name="id_history" ColumnName="id_history" />
+                <ScalarProperty Name="id_game" ColumnName="id_game" />
+                <ScalarProperty Name="bet_credits" ColumnName="bet_credits" />
+                <ScalarProperty Name="profit" ColumnName="profit" />
+                <ScalarProperty Name="date_game" ColumnName="date_game" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="rep_game">
             <EntityTypeMapping TypeName="Kazino1337Model.rep_game">
               <MappingFragment StoreEntitySet="rep_game">
-                <ScalarProperty Name="bet_credits" ColumnName="bet_credits" />
-                <ScalarProperty Name="id_history" ColumnName="id_history" />
                 <ScalarProperty Name="id_rep" ColumnName="id_rep" />
+                <ScalarProperty Name="id_history" ColumnName="id_history" />
+                <ScalarProperty Name="bet_credits" ColumnName="bet_credits" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="Kazino1337Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="trade_chips">
             <EntityTypeMapping TypeName="Kazino1337Model.trade_chips">
               <MappingFragment StoreEntitySet="trade_chips">
-                <ScalarProperty Name="chips" ColumnName="chips" />
-                <ScalarProperty Name="credits" ColumnName="credits" />
-                <ScalarProperty Name="id_user" ColumnName="id_user" />
-                <ScalarProperty Name="id_bank" ColumnName="id_bank" />
                 <ScalarProperty Name="id_trade" ColumnName="id_trade" />
+                <ScalarProperty Name="id_bank" ColumnName="id_bank" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="credits" ColumnName="credits" />
+                <ScalarProperty Name="chips" ColumnName="chips" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="transactions">
             <EntityTypeMapping TypeName="Kazino1337Model.transactions">
               <MappingFragment StoreEntitySet="transactions">
-                <ScalarProperty Name="id_bank" ColumnName="id_bank" />
-                <ScalarProperty Name="transact_sum" ColumnName="transact_sum" />
-                <ScalarProperty Name="id_history" ColumnName="id_history" />
                 <ScalarProperty Name="id_transact" ColumnName="id_transact" />
+                <ScalarProperty Name="id_history" ColumnName="id_history" />
+                <ScalarProperty Name="transact_sum" ColumnName="transact_sum" />
+                <ScalarProperty Name="id_bank" ColumnName="id_bank" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="user">
             <EntityTypeMapping TypeName="Kazino1337Model.user">
               <MappingFragment StoreEntitySet="user">
-                <ScalarProperty Name="id_status" ColumnName="id_status" />
-                <ScalarProperty Name="chips" ColumnName="chips" />
-                <ScalarProperty Name="data_regist" ColumnName="data_regist" />
-                <ScalarProperty Name="credits" ColumnName="credits" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="login_user" ColumnName="login_user" />
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="login_user" ColumnName="login_user" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="credits" ColumnName="credits" />
+                <ScalarProperty Name="data_regist" ColumnName="data_regist" />
+                <ScalarProperty Name="chips" ColumnName="chips" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
