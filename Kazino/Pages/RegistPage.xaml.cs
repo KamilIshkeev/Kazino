@@ -69,6 +69,7 @@ namespace Kazino.Pages
                 connect.db.SaveChanges();
                 MessageBox.Show("Пользователь зарегистрирован");
                 _mainWindow.MainFrame.NavigationService.Navigate(new MainPage(_mainWindow));
+
             }
 
         }
